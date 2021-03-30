@@ -57,7 +57,7 @@ export default class DishDetail extends Component {
                 {this.renderDish(this.props)}
               </div>
               <div className="col-12 col-md-5 m-1">
-                  {this.renderComments(this.props.comments)}
+                {this.renderComments(this.props.comments)}
               </div>
         </div> 
     );

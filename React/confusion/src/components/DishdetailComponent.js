@@ -27,23 +27,24 @@ export default class DishDetail extends Component {
                 return(
                     <div>
                         <h4>Comments</h4>
-                        <ListGroup>
-                            {comments.map(() => {
+                        <ul className="list-unstyled">
+                            {comments.map((commentItem) => {
                                     return(
-                                        <div key={comments.id}>
-                                                <ListGroupItem>{comments.comment}
+                                        <div key={commentItem.id}>
+                                                <li>{commentItem.comment}
                                                 <br></br>
-                                                <span>--</span>
-                                                {comments.author}
+                                                <span>-- </span>
+                                                {commentItem.author}
                                                 <span>,</span>
-                                                {comments.date}
-                                                </ListGroupItem>
+                                                {commentItem.date}
+                                                <br></br>
+                                                </li>
                                         </div>
                                     )
                                 }
                             )
                             }
-                        </ListGroup>
+                        </ul>
                     </div>
                 );
             else

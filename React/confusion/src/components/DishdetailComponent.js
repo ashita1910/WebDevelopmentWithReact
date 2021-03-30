@@ -28,16 +28,15 @@ export default class DishDetail extends Component {
                     <div>
                         <h4>Comments</h4>
                         <ListGroup>
-                            {comments.map(
-                                (commentItem) => {
+                            {comments.map(() => {
                                     return(
-                                        <div key={commentItem.id}>
-                                            <ListGroupItem>{commentItem.comment}</ListGroupItem>
-                                            <ListGroupItem>
+                                        <div key={comments.id}>
+                                                <ListGroupItem>{comments.comment}
+                                                <br></br>
                                                 <span>--</span>
-                                                {commentItem.author}
+                                                {comments.author}
                                                 <span>,</span>
-                                                {commentItem.date}
+                                                {comments.date}
                                                 </ListGroupItem>
                                         </div>
                                     )
@@ -55,14 +54,10 @@ export default class DishDetail extends Component {
     return (
         <div className="row">
               <div className="col-12 col-md-5 m-1">
-                {this.renderDish(this.props.selectedDish)}
+                {this.renderDish(this.props)}
               </div>
               <div className="col-12 col-md-5 m-1">
-                  {/* {this.renderComments(this.props.selectedDish.comments)}
-                   */}
-                  {/* <ListGroup>
-                    {this.renderComments(this.props.selectedDish.comments)}
-                    </ListGroup> */}
+                  {this.renderComments(this.props.comments)}
               </div>
         </div> 
     );

@@ -70,6 +70,7 @@ const maxLength = (len) => (val) => !(val) || (val.length <= len);
         handleSubmit = (values) => {
             console.log("Current Status: " + JSON.stringify(values));
             alert("Current Status: " + JSON.stringify(values));
+            this.toggleModal();
         }
         render(){
             return(

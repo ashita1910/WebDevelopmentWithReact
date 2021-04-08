@@ -13,7 +13,6 @@ import { LEADERS } from '../shared/leaders';
 import About from './AboutComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { addComment, fetchDishes } from '../redux/ActionCreators';
 import { actions } from 'react-redux-form';
 import { addComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
 

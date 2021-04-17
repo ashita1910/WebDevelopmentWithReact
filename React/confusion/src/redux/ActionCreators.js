@@ -41,22 +41,16 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
     .catch(error =>  { console.log('post comments', error.message); alert('Your comment could not be posted\nError: '+error.message); });
 };
 
-export const addFeedback = (feedback) => ({
-  type: ActionTypes.ADD_FEEDBACK,
-  payload: feedback
-});
-
-export const postFeedback = (feedbackId, firstname, lastname, telnum, email, agree, contactType, message) => (dispatch) => {
+export const postFeedback = (feedback) => (dispatch) => {
 
   const newFeedback = {
-      feedbackId: feedbackId,
-      firstname: firstname,
-      lastname: lastname,
-      telnum: telnum,
-      email: email,
-      agree: agree,
-      contactType: contactType,
-      message: message
+      firstname: feedback.firstname,
+      lastname: feedback.lastname,
+      telnum: feedback.telnum,
+      email: feedback.email,
+      agree: feedback.agree,
+      contactType: feedback.contactType,
+      message: feedback.message
   };
   
   return fetch(baseUrl + 'feedback', {
@@ -80,7 +74,7 @@ export const postFeedback = (feedbackId, firstname, lastname, telnum, email, agr
           throw error;
     })
   .then(response => response.json())
-  .then(response => dispatch(addFeedback(response)))
+  .then(response => alert('Current State: ' + JSON.stringify(response)))
   .catch(error =>  { console.log('post feedback', error.message); alert('Your feedback could not be posted\nError: '+error.message); });
 };
 

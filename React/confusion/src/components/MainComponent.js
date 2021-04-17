@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
   fetchComments: () => dispatch(fetchComments()),
   fetchPromos: () => dispatch(fetchPromos()),
   fetchLeaders: () => dispatch(fetchLeaders()),
-  postFeedback: () => dispatch(postFeedback())
+  postFeedback: (feedback) => dispatch(postFeedback(feedback))
 });
 
 const mapStateToProps = state => {

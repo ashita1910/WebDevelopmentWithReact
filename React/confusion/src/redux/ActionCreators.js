@@ -42,20 +42,9 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
 };
 
 export const postFeedback = (feedback) => (dispatch) => {
-
-  const newFeedback = {
-      firstname: feedback.firstname,
-      lastname: feedback.lastname,
-      telnum: feedback.telnum,
-      email: feedback.email,
-      agree: feedback.agree,
-      contactType: feedback.contactType,
-      message: feedback.message
-  };
-  
   return fetch(baseUrl + 'feedback', {
       method: "POST",
-      body: JSON.stringify(newFeedback),
+      body: feedback,
       headers: {
         "Content-Type": "application/json"
       },
@@ -74,7 +63,7 @@ export const postFeedback = (feedback) => (dispatch) => {
           throw error;
     })
   .then(response => response.json())
-  .then(response => alert('Current State: ' + JSON.stringify(response)))
+  .then(response => alert('Thank You for your feedback.\n Your Feedback: ' + JSON.stringify(response)))
   .catch(error =>  { console.log('post feedback', error.message); alert('Your feedback could not be posted\nError: '+error.message); });
 };
 
